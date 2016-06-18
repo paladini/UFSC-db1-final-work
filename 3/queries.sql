@@ -27,13 +27,13 @@ SELECT p.nomePess, pj. , proj.nomeProj,count(codProj) FROM ProjetoPessoa pj
 		(proj.anoFim = 2014)
 	GROUP BY ;
 
--- Questão IV (errado pq acessa 4 tabelas?)
+-- Questão IV (errado pq acessa 4 tabelas?)(Emmanuel: Acho que sim, talvez retirar a tabela curso e fazer um where em relação ao papel da pessoa no projeto.)
 -- "Selecionar o código do projeto, nome do projeto e quantidade de pessoas do sexo masculino que estudam no curso 'Blabla' e estão associadas a esse projeto. Ordenar pelo nome do projeto em ordem crescente."
 SELECT proj.codProj, proj.nomeProj, COUNT(proj.codProj) FROM Pessoa p
 	INNER JOIN Curso c ON c.codCurso = p.codCurso
 	INNER JOIN ProjetoPessoa pj ON pj.NumeroCartao = p.numeroCartao
 	INNER JOIN Projeto proj ON proj.codProj = pj.codProj
-	WHERE (c.nomeCurso = 'Blabla') AND (p.sexo = 'M')
+	WHERE (c.nomeCurso = 'Ciencias da Computacao') AND (p.sexo = 'M')
 	GROUP BY proj.codProj, proj.nomeProj
 	ORDER BY proj.nomeProj ASC
 
