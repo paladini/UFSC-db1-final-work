@@ -1,6 +1,6 @@
 # Databases 1 Final Work
 
-Fernando Paladini (@paladini) and Emmanuel Podestá Junior (@epodesta).
+Fernando Paladini ([@paladini]()) and Emmanuel Podestá Junior ([@epodesta]()).
 
 **Folder structure:**
 
