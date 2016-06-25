@@ -1,4 +1,4 @@
-CREATE TABLE Pessoa(
+﻿CREATE TABLE Pessoa(
 	numeroCartao integer NOT NULL,
 	nomePess varchar(40),
 	sexo char(1) CHECK (sexo in ('M', 'F')),
@@ -25,7 +25,7 @@ CREATE TABLE Projeto(
 CREATE TABLE ProjetoPessoa(
 	codProj integer NOT NULL,
 	numeroCartao integer NOT NULL,
-	papelPessProj varchar(10) CHECK (papelPessProj in ('Líder', 'Membro', 'Bolsista'))
+	papelPessProj varchar(8) CHECK (papelPessProj in ('Líder', 'Membro', 'Bolsista'))
 );
 ALTER TABLE Curso
 	ADD CONSTRAINT pk_codCurso PRIMARY KEY (codCurso);
@@ -37,8 +37,6 @@ ALTER TABLE Pessoa
 ALTER TABLE OutroEmail
 	ADD CONSTRAINT pk_numC PRIMARY KEY (numeroCartao, email),
 	ADD CONSTRAINT fk_numC FOREIGN KEY (numeroCartao) REFERENCES Pessoa(numeroCartao);
-
-
 
 ALTER TABLE Projeto
 	ADD CONSTRAINT pk_codProj PRIMARY KEY (codProj),

@@ -1,5 +1,5 @@
--- Questão I 
--- "Retornar número e nome do projeto que começaram entre 2010 e 2014 e tiveram seu fim após 2015."
+﻿-- Questão I 
+-- "Retornar número e nome do projeto que começaram entre 2001 e 2010 e tiveram seu fim após 2011."
 SELECT codProj, nomeProj FROM Projeto WHERE 
 	(anoInicio BETWEEN 2001 AND 2010) AND (anoFim > 2011);
 
