@@ -17,8 +17,8 @@ CREATE TABLE Curso(
 CREATE TABLE Projeto(
 	codProj integer NOT NULL,
 	nomeProj varchar(40),
-	anoInicio int,
-	anoFim int,
+	anoInicio integer,
+	anoFim integer,
 	codProjAnte integer
 	--CodProjAnte FK
 );
