@@ -27,13 +27,14 @@ SELECT p.numeroCartao, p.nomePess, c.nomeCurso FROM Pessoa p , Curso c
 --		(proj.anoFim = 2014)
 --	GROUP BY ;
 
+--Retorna o nome do projeto e sua quantidade de membros
 SELECT tit.nomeProj, COUNT(tit.papelPessProj)
 	FROM (SELECT p.nomePess, pp.PapelPessProj, proj.nomeProj
 	FROM Pessoa p JOIN projetoPessoa pp ON p.numeroCartao = pp.numeroCartao
 	JOIN Projeto proj ON pp.codProj = proj.codProj
 	WHERE p.sexo = 'M' AND pp.papelPessProj = 'Membro' AND proj.anoInicio > 2004) as tit
 GROUP BY tit.nomeProj
-ORDER BY tit.nomeProj
+ORDER BY tit.nomeProj;
 
 
 
@@ -45,7 +46,7 @@ SELECT proj.codProj, proj.nomeProj, COUNT(pj.codProj) FROM Pessoa p
 	INNER JOIN Projeto proj ON proj.codProj = pj.codProj
 	WHERE (c.nomeCurso = 'Ciencias da Computacao') AND (p.sexo = 'M')
 	GROUP BY proj.codProj, proj.nomeProj
-	ORDER BY proj.nomeProj ASC
+	ORDER BY proj.nomeProj ASC;
 
 -- Questão V
 -- "Quantidade de pessoas do sexo Feminino que trabalham como 'Membro' em cada projeto, desde que o número de mulheres trabalhando nesse projeto seja maior do que 2."
