@@ -27,12 +27,13 @@ SELECT p.numeroCartao, p.nomePess, c.nomeCurso FROM Pessoa p , Curso c
 --		(proj.anoFim = 2014)
 --	GROUP BY ;
 
-SELECT p.nomePess, pp.PapelPessProj, COUNT(pp.codProj)
+SELECT tit.nomeProj, COUNT(tit.papelPessProj)
+	FROM (SELECT p.nomePess, pp.PapelPessProj, proj.nomeProj
 	FROM Pessoa p JOIN projetoPessoa pp ON p.numeroCartao = pp.numeroCartao
 	JOIN Projeto proj ON pp.codProj = proj.codProj
-	WHERE p.sexo = 'M' AND pp.papelPessProj = 'Membro' AND proj.anoInicio > 2004
-	GROUP BY p.nomePess, pp.PapelPessProj
-	ORDER BY p.nomePess
+	WHERE p.sexo = 'M' AND pp.papelPessProj = 'Membro' AND proj.anoInicio > 2004) as tit
+GROUP BY tit.nomeProj
+ORDER BY tit.nomeProj
 
 
 
