@@ -4,7 +4,10 @@ Fernando Paladini ([@paladini](http://www.github.com/paladini)) and Emmanuel Pod
 
 **Folder structure:**
 
-* 1_2/ - Questions 1 and 2. ER Diagram + textual logic model.
-* 3/ - Question 3. SQL to create database + test dataset + queries.
-* 4/ - Algebric expressions equivalent to SQL queries.
+* answers/
+  * part1/ - ER Diagram for question 1.
+  * part2/ - Textual logic model for question 2.
+  * part3/ - SQL to create database + test dataset + queries + relational algebra.
+  * part4/ - Outdated relational algebra. Update it later.
+* questions/ - picture of the questions.
 
